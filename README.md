@@ -1,4 +1,6 @@
-# dbops-project
+# DBOps Homework 1
+
+- project lives [here](https://github.com/Fr0stFree/DevOpsDBOps-Homework1)
 
 ## Steps
 
