@@ -1,8 +1,3 @@
-CREATE TABLE order_product (
-    order_id INTEGER REFERENCES orders(id),
-    product_id INTEGER REFERENCES product(id),
-    quantity INTEGER NOT NULL
-);
 CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
     status VARCHAR(255)
@@ -21,4 +16,9 @@ CREATE TABLE product_info (
     product_id INTEGER REFERENCES product(id),
     name VARCHAR(255) NOT NULL,
     price FLOAT
+);
+CREATE TABLE order_product (
+    order_id INTEGER REFERENCES orders(id),
+    product_id INTEGER REFERENCES product(id),
+    quantity INTEGER NOT NULL
 );
