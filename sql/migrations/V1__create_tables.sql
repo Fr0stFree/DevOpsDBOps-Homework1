@@ -6,7 +6,7 @@ CREATE TABLE orders_date (
     order_id INTEGER REFERENCES orders(id),
     status VARCHAR(255),
     date_created DATE DEFAULT CURRENT_DATE
-)
+);
 CREATE TABLE product (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
