@@ -44,16 +44,6 @@ jobs:
       env:
         PGPASSWORD: ${{ secrets.DB_PASSWORD }}
 
-    - name: Display products that have been sold in the last 7 days
-      run: |
-        psql -h ${{ secrets.DB_HOST }} \
-             -p ${{ secrets.DB_PORT }} \
-             -d ${{ secrets.DB_NAME }} \
-             -U ${{ secrets.DB_USER }} \
-             -c "SELECT o.date_created, SUM(op.quantity) FROM orders AS o JOIN order_product AS op ON o.id = op.order_id WHERE o.status = 'shipped' AND o.date_created > NOW() - INTERVAL '7 DAY' GROUP BY o.date_created;"
-      env:
-        PGPASSWORD: ${{ secrets.DB_PASSWORD }}
-
     ### Этот шаг оставьте без изменений
     - name: Download and setup autotests binaries
       run: |
